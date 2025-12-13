@@ -1,0 +1,346 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #111827;
+            background-color: #ffffff;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        button, input, select {
+            font-family: inherit;
+            border: none;
+            outline: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            
+        }
+        .textpurple {
+            color: #6366f1;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover, .btn:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .btnprimary {
+            background-color: #6366f1;
+            color: #ffffff;
+        }
+        .btnprimary:hover, .btnprimary:focus {
+            background-color: #4f46e5;
+        }
+        .btnsecondary {
+            background-color: transparent;
+            color: #6366f1;
+            border: 1px solid #6366f1;
+        }
+        .btnsecondary:hover, .btnsecondary:focus {
+            background-color: #eef2ff;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            z-index: 50;
+            padding: 1rem 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .headercontent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #6366f1;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        nav ul li a {
+            font-size: 1rem;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover, nav ul li a:focus {
+            color: #6366f1;
+        }
+        .authbuttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero {
+            padding: 3rem 0;
+            text-align: left;
+        }
+        .herotitle {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .herointro {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .reasons {
+            padding: 4rem 0;
+        }
+        .reasonsintro {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin-bottom: 3rem;
+        }
+        .reasonsgrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .reasoncard {
+            padding: 1.5rem;
+        }
+        .reasonnum {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
+        }
+        .reasontext {
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .excellence {
+            padding: 4rem 0;
+        }
+        .excellencetitle {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .excellenceintro {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin-bottom: 3rem;
+        }
+        .excellencegrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .excellenceitem {
+            padding: 1.5rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+        }
+        .excellenceitemtitle {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+        .excellenceitemtext {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .operations {
+            padding: 4rem 0;
+        }
+        .operationstitle {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .operationsintro {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin-bottom: 3rem;
+        }
+        .operationsgrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .operationsitem {
+            padding: 1.5rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+        }
+        .operationsitemtitle {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+        .operationsitemtext {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        .operationsnote {
+            font-size: 1rem;
+            color: #374151;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .today {
+            padding: 4rem 0;
+        }
+        .todaytitle {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .todaytext {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 800px;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .sayhi {
+            padding: 4rem 0;
+            text-align: center;
+            background: #f9fafb;
+        }
+        .sayhititle {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .sayhitext {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+        .sayhibtn {
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+
+        footer {
+            background-color: #f9fafb;
+            padding: 3rem 0 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .footergrid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+        }
+        .footerlogo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #6366f1;
+            margin-bottom: 1rem;
+        }
+        .footercert {
+            display: flex;
+            gap: 1rem;
+        }
+        .certbadge {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .footersectiontitle {
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        .footerlist {
+            list-style: none;
+        }
+        .footerlist li {
+            margin-bottom: 0.5rem;
+        }
+        .footerlist li a {
+            color: #6b7280;
+            transition: color 0.2s;
+        }
+        .footerlist li a:hover, .footerlist li a:focus {
+            color: #6366f1;
+        }
+        .footerbottom {
+            text-align: center;
+            margin-top: 2rem;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 768px) {
+            .headercontent {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .herotitle {
+                font-size: 2.5rem;
+            }
+            .reasonsgrid, .excellencegrid, .operationsgrid {
+                grid-template-columns: 1fr;
+            }
+            .footergrid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .herotitle {
+                font-size: 2rem;
+            }
+            .sayhititle {
+                font-size: 2rem;
+            }
+        }

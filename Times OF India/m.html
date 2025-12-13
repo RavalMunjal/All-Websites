@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE TIMES OF INDIA — Desktop Demo (Beginner CSS, HTML Only)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+   
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: Roboto, Arial, Helvetica, sans-serif;
+      font-size: 1rem; 
+      
+      line-height: 1.5;
+    }
+    a {
+         color: inherit; 
+         text-decoration: none;
+         }
+    img { 
+        display: block; 
+        height: auto;
+     }
+
+    
+    
+    .container {
+         width: 88vw;
+          margin-left: 6vw; 
+          margin-right: 6vw;
+         }
+    .gap-s {
+         height: 2vh; 
+        }
+    .gap-m { 
+        height: 3vh;
+     }
+    .gap-l {
+         height: 5vh;
+         }
+
+ 
+    .utility { 
+        height: 6vh;
+         display: flex;
+          align-items: center;
+           background: #f7f7f7;
+            border-bottom: 0.3vh solid #e5e7eb;
+             font-size: 0.9rem;
+            
+            }
+    .utility-inner {
+         display: flex;
+          align-items: center; 
+          justify-content: space-between; 
+        }
+    .utility-left, .utility-right {
+         display: flex;
+          align-items: center;
+           gap: 1.2vw; 
+        }
+    .tag {
+         background: #f0f0f0;
+          padding: 0.8vh 1vw; 
+          border-radius: 0.8vh;
+         }
+
+    header {
+         position: sticky; 
+         top: 0; 
+         background: #ffffff;
+          border-bottom: 0.4vh solid #e5e7eb;
+           z-index: 10;
+         }
+    .masthead { 
+        height: 10vh;
+         display: flex;
+          align-items: center;
+           justify-content: center;
+         }
+    .masthead-title { 
+        
+        font-family: Merriweather, serif;
+         font-size: 2rem; 
+         letter-spacing: 0.05em;
+         }
+
+    .navbar { 
+        height: 8vh; 
+        display: flex;
+         align-items: center;
+          justify-content: space-between;
+         }
+    .logo-box { 
+        display: flex;
+         align-items: center;
+          gap: 1vw;
+         }
+    .logo {
+         width: 5vw;
+          height: 5vw;
+           min-width: 5vw;
+            min-height: 5vw;
+             display: flex;
+             align-items: center;
+              justify-content: center;
+               background: #c7001c;
+                color: #ffffff; border-radius: 1vh;
+                 font-family: Merriweather, serif;
+                  font-weight: 700;
+                 }
+
+    .menu {
+         display: flex;
+          gap: 1vw; 
+          align-items: center;
+         }
+    .menu li { 
+        list-style: none;
+         position: relative;
+         }
+    .menu a { 
+        display: inline-flex;
+         align-items: center; 
+         height: 6vh;
+          padding: 0 1.2vw;
+           border-radius: 1vh;
+            font-weight: 500;
+         }
+    .menu a:hover { 
+        background: #f5f6f7; 
+        color: #c7001c;
+     }
+
+  
+    .dropdown { position: absolute; 
+        left: 0;
+         top: calc(100% + 1vh);
+          background: #ffffff;
+           border: 0.4vh solid #e5e7eb;
+            border-radius: 1vh; padding: 2vh 1.2vw;
+             display: none; min-width: 22vw;
+             }
+    .dropdown a { 
+        display: block;
+         padding: 1vh 0.8vw;
+          border-radius: 0.6vh;
+           font-size: 0.9rem;
+            color: #333333;
+         }
+    .dropdown a:hover { 
+        background: #f5f6f7; 
+        color: #c7001c;
+     }
+    .menu li:hover .dropdown {
+         display: block;
+         }
+
+  
+    .topics {
+         height: 6vh;
+         display: flex;
+          align-items: center;
+           border-top: 0.4vh solid #e5e7eb;
+            border-bottom: 0.4vh solid #e5e7eb;
+             background: #ffffff;
+             }
+    .topics-inner {
+         display: flex;
+          gap: 2vw;
+           align-items: center;
+            white-space: nowrap;
+             overflow: hidden;
+             }
+    .topic {
+
+         padding: 0.8vh 1vw;
+          border-radius: 1vh;
+           font-size: 0.9rem;
+         }
+    .topic.active {
+         background: #c7001c;
+          color: #ffffff;
+           font-weight: 700;
+         }
+
+    .page {
+         display: flex;
+          gap: 2vw;
+           align-items: flex-start;
+            padding-top: 3vh;
+             padding-bottom: 6vh;
+             }
+    .left-col {
+         flex: 0 0 22vw;
+         }
+    .center-col {
+         flex: 1 1 auto;
+          min-width: 0;
+         }
+    .right-col { 
+        flex: 0 0 26vw;
+     }
+
+   
+    .list-col { display: flex; flex-direction: column; gap: 2vh; }
+    .mini {
+         display: flex;
+          gap: 1vw;
+         }
+    .mini .mini-thumb { 
+        flex: 0 0 7.5vw;
+         height: 7.5vw; 
+         border-radius: 1vh; 
+         overflow: hidden; 
+        }
+    .mini .mini-thumb img { 
+        width: 7.5vw; 
+        height: 7.5vw;
+         object-fit: cover;
+         }
+    .mini .mini-tag {
+         color: #c7001c;
+          font-size: 0.8rem;
+           font-weight: 700;
+         }
+    .mini .mini-title { 
+        font-size: 1rem;
+         font-weight: 700; 
+        }
+
+   
+    .lead h1 { font-family: Merriweather, serif;
+         font-size: 2.2rem; 
+         line-height: 1.25; 
+         margin: 0;
+         }
+    .lead .lead-figure {
+         border-radius: 1.6vh;
+          overflow: hidden;
+         }
+    .lead .lead-figure img { width: 100%; 
+        height: 36vw; 
+        object-fit: cover;
+     }
+
+   
+    .featured {
+         display: flex;
+          gap: 1.4vw;
+           flex-wrap: wrap;
+         }
+    .card { 
+        flex: 1 1 26vw;
+         min-width: 26vw;
+          display: flex;
+           flex-direction: column;
+            gap: 1vh;
+         }
+    .card img { 
+        width: 26vw;
+         height: 15vw;
+          object-fit: cover;
+           border-radius: 1vh;
+         }
+    .card h3 { 
+        font-size: 1.2rem;
+         margin: 0; 
+        }
+    .card p { 
+        font-size: 0.9rem;
+         color: #6b7280;
+         }
+
+    
+    .stream { 
+        display: flex;
+         flex-direction: column;
+          gap: 2vh;
+         }
+    .story {
+         display: flex;
+          gap: 1vw;
+         }
+    .story .story-thumb { 
+        flex: 0 0 12vw;
+         height: 8.5vw;
+          border-radius: 1vh;
+           overflow: hidden; 
+        }
+    .story .story-thumb img { 
+        width: 12vw;
+        height: 8.5vw;
+         object-fit: cover;
+         }
+    .story h4 { 
+        font-size: 1.2rem; 
+        margin: 0; 
+    }
+    .story p {
+         font-size: 0.9rem;
+          color: #6b7280; 
+        }
+
+   
+    .widget { border: 0.4vh solid #e5e7eb;
+        border-radius: 1vh;
+         padding: 2.4vh 1.6vw;
+          display: flex;
+           flex-direction: column;
+            gap: 1.2vh;
+         }
+    .widget h4 { 
+        font-size: 1.2rem;
+         margin: 0; 
+        }
+
+   
+    .video-list {
+         display: flex;
+          flex-direction: column;
+           gap: 1.6vh;
+         }
+    .video { 
+        display: flex;
+         gap: 1vw;
+         }
+    .video .video-thumb {
+         flex: 0 0 12vw;
+          height: 8vw;
+          border-radius: 1vh;
+           overflow: hidden;
+         }
+    .video .video-thumb img {
+         width: 12vw;
+         height: 8vw;
+          object-fit: cover;
+         }
+    .video .video-meta {
+         font-size: 0.85rem;
+          color: #6b7280; 
+        }
+
+   
+    footer { 
+        border-top: 0.4vh solid #e5e7eb;
+         padding-top: 5vh;
+          padding-bottom: 8vh;
+           background: #fafafa;
+         }
+    .footer-grid {
+         display: flex;
+          gap: 3vw; 
+          flex-wrap: wrap;
+         }
+    .footer-col { 
+
+        flex: 1 1 22vw;
+         min-width: 22vw;
+         }
+    footer h5 { 
+
+        font-size: 1.2rem;
+         margin: 0 0 2vh 0;
+         }
+    footer a { 
+        display: block;
+         font-size: 0.9rem;
+          color: #444444;
+           padding: 0.8vh 0;
+         }
+    .copyright { 
+        text-align: center; 
+        color: #6b7280;
+         font-size: 0.9rem; 
+         margin-top: 5vh;
+         }
+
+    .overlay { 
+        position: fixed;
+         inset: 0;
+          background: rgba(0,0,0,0.5);
+           display: none; 
+           align-items: center;
+            justify-content: center;
+         }
+    .overlay:target { 
+        display: flex;
+     }
+    .modal {
+        width: 70vw;
+         background: #ffffff;
+          border-radius: 1.6vh;
+           padding: 4vh 4vw;
+         }
+    .modal h3 { 
+        font-size: 1.5rem;
+         margin: 0 0 2vh 0;
+         }
+    .modal p {
+
+         font-size: 0.9rem;
+          color: #6b7280; 
+        }
+    .close { position: absolute;
+         top: 3vh; right: 6vw;
+          background: #ffffff; 
+          border: 0.4vh solid #e5e7eb;
+           width: 4.5vw;
+            height: 4.5vh;
+             border-radius: 50%;
+              display: flex;
+               align-items: center;
+                justify-content: center;
+             }
+    .input { height: 5.2vh;
+         border: 0.4vh solid #e5e7eb;
+          border-radius: 1vh;
+           padding-left: 1vw; 
+           padding-right: 1vw; 
+           font-size: 1rem;
+         }
+    .form {
+         display: flex;
+          gap: 1vw; 
+          align-items: center;
+         }
+
+ 
+    @media (max-width: 72rem) {
+      .page {
+         flex-direction: column;
+         }
+      .left-col, .right-col {
+         width: 88vw;
+         }
+      .lead .lead-figure img {
+         height: 56vw;
+         }
+      .card { 
+        min-width: 40vw;
+     }
+      .card img { 
+        width: 40vw; 
+        height: 22.5vw;
+     }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="utility">
+    <div class="container utility-inner">
+      <div class="utility-left">
+        <span class="tag">Edition IN</span>
+        <span>English</span>
+        <span>Sat, Oct 11 • Updated 10:15 AM IST</span>
+      </div>
+      <div class="utility-right">
+        <a class="tag" href="#subscribe">Subscribe</a>
+        <a class="tag" href="#signin">Sign In</a>
+        <a class="tag" href="#search">Search</a>
+      </div>
+    </div>
+  </div>
+
+ 
+  <header>
+    <div class="masthead">
+      <div class="masthead-title">THE TIMES OF INDIA</div>
+    </div>
+
+    <nav class="container navbar">
+      <div class="logo-box">
+        <div class="logo">TOI</div>
+      </div>
+      <ul class="menu">
+        <li>
+          <a href="#">TOI+</a>
+          <div class="dropdown">
+            <a href="#">Explainers</a>
+            <a href="#">Deep Dives</a>
+            <a href="#">Opinion+</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">Live Videos</a>
+          <div class="dropdown">
+            <a href="#">Latest</a>
+            <a href="#">India</a>
+            <a href="#">World</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">City</a>
+          <div class="dropdown">
+            <a href="#">Mumbai</a>
+            <a href="#">Delhi</a>
+            <a href="#">Bengaluru</a>
+            <a href="#">Kolkata</a>
+          </div>
+        </li>
+        <li><a href="#">India</a></li>
+        <li><a href="#">World</a></li>
+        <li><a href="#">Business</a></li>
+        <li><a href="#">Cricket</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Entertainment</a></li>
+      </ul>
+    </nav>
+
+    <div class="topics">
+      <div class="container topics-inner">
+        <span class="topic active">In The News</span>
+        <span class="topic">Study Abroad</span>
+        <span class="topic">Dialogues</span>
+        <span class="topic">Live Score</span>
+        <span class="topic">Learning Curve</span>
+        <span class="topic">Lifestyle</span>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="container page">
+
+    <aside class="left-col">
+      <div class="list-col">
+        <article class="mini">
+          <div class="mini-thumb"><img src="https://picsum.photos/240/240?random=1" alt=""></div>
+          <div>
+            <div class="mini-tag">Bengaluru</div>
+            <a class="mini-title" href="#">Auto driver arrested for abusing, attacking woman</a>
+          </div>
+        </article>
+        <article class="mini">
+          <div class="mini-thumb"><img src="https://picsum.photos/240/240?random=2" alt=""></div>
+          <div>
+            <div class="mini-tag">India</div>
+            <a class="mini-title" href="#">Caught red‑handed, wife confronts husband — Watch</a>
+          </div>
+        </article>
+        <article class="mini">
+          <div class="mini-thumb"><img src="https://picsum.photos/240/240?random=3" alt=""></div>
+          <div>
+            <div class="mini-tag">Tech</div>
+            <a class="mini-title" href="#">Engineer quits after 13 years; sends email</a>
+          </div>
+        </article>
+      </div>
+    </aside>
+
+    <section class="center-col">
+      <article class="lead">
+        <h1>Cough syrup row: Another sample from same batch of Coldrif fails testing</h1>
+        <figure class="lead-figure"><img src="https://picsum.photos/1280/720?random=10" alt=""></figure>
+      </article>
+
+      <div class="gap-m"></div>
+
+      <section class="featured">
+        <article class="card">
+          <img src="https://picsum.photos/640/360?random=21" alt="">
+          <h3>Trade war reignites: Tariffs announced on key imports</h3>
+          <p>Analysts expect short‑term volatility as markets digest the move; long‑term impact remains debated.</p>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/640/360?random=22" alt="">
+          <h3>City infra: New metro line to reduce commute time by 35%</h3>
+          <p>The corridor connects business districts with residential hubs, adding peak‑hour capacity.</p>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/640/360?random=23" alt="">
+          <h3>Asia Cup: Skipper finds form with fluent 92</h3>
+          <p>Bowling unit wraps up the tail swiftly as the squad finalises playing XI combinations.</p>
+        </article>
+      </section>
+
+      <div class="gap-l"></div>
+
+      <section class="stream">
+        <article class="story">
+          <div class="story-thumb"><img src="https://picsum.photos/400/280?random=41" alt=""></div>
+          <div>
+            <h4>Orange alert; heavy rains lash southern districts</h4>
+            <p>Authorities advised to prepare for localised flooding and traffic disruption through the weekend.</p>
+          </div>
+        </article>
+        <article class="story">
+          <div class="story-thumb"><img src="https://picsum.photos/400/280?random=42" alt=""></div>
+          <div>
+            <h4>Markets end flat after volatile session; IT drags</h4>
+            <p>Benchmark indices reversed early gains as profit‑taking emerged in heavyweight counters.</p>
+          </div>
+        </article>
+        <article class="story">
+          <div class="story-thumb"><img src="https://picsum.photos/400/280?random=43" alt=""></div>
+          <div>
+            <h4>New digital learning framework released</h4>
+            <p>Focus on accessibility, teacher training, and secure platforms for classrooms.</p>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <aside class="right-col">
+      <section class="widget">
+        <h4>Featured Videos</h4>
+        <div class="video-list">
+          <div class="video">
+            <div class="video-thumb"><img src="https://picsum.photos/400/280?random=51" alt=""></div>
+            <div>
+              <a href="#"><strong>‘No reason to meet you now!’: Big Trump‑Xi ‘breakup’</strong></a>
+              <div class="video-meta">03:26 • World</div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="video-thumb"><img src="https://picsum.photos/400/280?random=52" alt=""></div>
+            <div>
+              <a href="#"><strong>Sensex at record: What next for investors?</strong></a>
+              <div class="video-meta">04:12 • Business</div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="video-thumb"><img src="https://picsum.photos/400/280?random=53" alt=""></div>
+            <div>
+              <a href="#"><strong>Inside training: India’s prep for decisive ODI</strong></a>
+              <div class="video-meta">02:48 • Sports</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="gap-m"></div>
+
+      <section class="widget">
+        <h4>Most Read</h4>
+        <a href="#">How to claim tax rebates in FY25</a>
+        <a href="#">EVs vs hybrids: The real costs</a>
+        <a href="#">Top 10 weekend getaways</a>
+        <a href="#">Monsoon essentials checklist</a>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h5>News</h5>
+        <a href="#">India</a>
+        <a href="#">World</a>
+        <a href="#">Business</a>
+        <a href="#">Sports</a>
+      </div>
+      <div class="footer-col">
+        <h5>Life & Style</h5>
+        <a href="#">Entertainment</a>
+        <a href="#">Health</a>
+        <a href="#">Travel</a>
+      </div>
+      <div class="footer-col">
+        <h5>Network</h5>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <a href="#subscribe">Newsletter</a>
+        <a href="#signin">Alerts</a>
+        <a href="#search">Search</a>
+      </div>
+    </div>
+    <div class="container copyright">© 2025 THE TIMES OF INDIA — Desktop demo (HTML & CSS only)</div>
+  </footer>
+
+  
+  <section id="subscribe" class="overlay" aria-label="Subscribe">
+    <a class="close" href="#" aria-label="Close">✕</a>
+    <div class="modal">
+      <h3>Subscribe (demo)</h3>
+      <p>Get morning & evening briefings in your inbox.</p>
+      <div class="form">
+        <input class="input" type="email" placeholder="Your email">
+        <a class="tag" href="#">Join</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="signin" class="overlay" aria-label="Sign In">
+    <a class="close" href="#" aria-label="Close">✕</a>
+    <div class="modal">
+      <h3>Sign in (demo)</h3>
+      <div class="form"><input class="input" type="email" placeholder="Email"></div>
+      <div class="gap-s"></div>
+      <div class="form"><input class="input" type="password" placeholder="Password"></div>
+      <div class="gap-m"></div>
+      <a class="tag" href="#">Continue</a>
+    </div>
+  </section>
+
+  <section id="search" class="overlay" aria-label="Search">
+    <a class="close" href="#" aria-label="Close">✕</a>
+    <div class="modal">
+      <h3>Search (demo)</h3>
+      <div class="form">
+        <input class="input" type="text" placeholder="Type your query and press Enter">
+        <a class="tag" href="#">Go</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+
+
+

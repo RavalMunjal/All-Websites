@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WazirX - India’s Largest Crypto Exchange | Trading Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        body {
+            background: #0a0e17;
+            color: #ffffff;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        button {
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        button:focus {
+            outline: 2px solid #ffd700;
+            outline-offset: 2px;
+        }
+        .btn-primary {
+            background: #ffd700;
+            color: #0a0e17;
+            font-weight: bold;
+            padding: 12px 24px;
+            font-size: 16px;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        .btn-blue {
+            background: transparent;
+            color: #00aaff;
+            border: 1px solid #00aaff;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        .btn-blue:hover {
+            background: #00aaff;
+            color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background: #0a0e17;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00aaff;
+        }
+        .nav-item {
+            color: #ffffff;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a1f2e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.5;
+        }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-text .subtitle {
+            font-size: 20px;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background: #00aaff;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            gap: 8px;
+        }
+        .app-badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .app-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        .app-badge:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .app-badge img {
+            width: 20px;
+            height: 20px;
+        }
+        .hero-phone {
+            position: relative;
+        }
+        .phone-mockup {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            gap: 10%;
+      
+        }
+        /* .phone-overlay {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 90%;
+            height: 80%;
+            background: #000;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        } */
+        /* .rank-badge {
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            background: #ffd700;
+            color: #0a0e17;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            transform: rotate(5deg);
+        } */
+        /* .phone-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #a0a0a0;
+        } */
+        /* .phone-nav {
+            display: flex;
+            gap: 10px;
+        }
+        .phone-nav span {
+            padding: 5px 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+        .crypto-list {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .crypto-item {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 11px;
+        } */
+        /* .price-card {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .price-card strong {
+            font-size: 12px;
+        }
+        .change {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        .positive { background: #00ff00; color: #000; }
+        .negative { background: #ff0000; color: #fff; }
+        .new-listings {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            color: #a0a0a0;
+        } */
+
+        /* Prices Section */
+        .prices-section {
+            padding: 60px 0;
+            background: #0a0e17;
+        }
+        .prices-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .prices-title {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        .crypto-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .crypto-card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .crypto-icon {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .crypto-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .crypto-details .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .order-book {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .order-header {
+            padding: 15px 20px;
+            background: rgba(0,170,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #00aaff;
+        }
+        .order-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+        }
+        .order-row:last-child {
+            border-bottom: none;
+        }
+        .sell { color: #ff0000; }
+        .buy { color: #00ff00; }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background: #0a0e17;
+        }
+        .features-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .kyc-icon { background: #00ff88; }
+        .support-icon { background: #ffaa00; }
+        .api-icon { background: #ff0066; }
+        .feature-text h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .feature-text p {
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+        .features-phone {
+            display: grid;
+            place-items: center;
+        }
+        .features-phone img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 20px;
+        }
+        .features-desc {
+            text-align: center;
+            color: #a0a0a0;
+            font-size: 16px;
+            grid-column: 1 / -1;
+            margin-top: 20px;
+        }
+
+        /* Security Section */
+        .security-section {
+            padding: 80px 0;
+            background: #0a0e17;
+            text-align: center;
+        }
+        .security-title {
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        .security-card {
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+        .security-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .safe-icon { background: #00ff88; }
+        .auth-icon { background: #ffaa00; }
+        .encrypt-icon { background: #00aaff; }
+        .trans-icon { background: #ff0066; }
+        .security-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .security-card p {
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+
+        /* Quick Start Section */
+        .quick-start-section {
+            padding: 80px 0;
+            background: #0a0e17;
+        }
+        .media-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        .media-logo {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        .media-logo:hover {
+            opacity: 1;
+        }
+        .quick-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .quick-step {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #00aaff;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        .quick-step h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .quick-step p {
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+        .app-download {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .app-download .app-badge {
+            background: #333;
+            color: #ffffff;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0e17;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: #00aaff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+        .footer-col a {
+            color: #a0a0a0;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        .footer-col a:hover {
+            color: #ffffff;
+        }
+        .footer-badges {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .fiu-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #00aaff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .crypto-count {
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-item {
+                margin-left: 0;
+            }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            .prices-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .security-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .quick-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+            .media-logos {
+                gap: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            .hero {
+                padding: 80px 0 60px;
+            }
+            .app-badges, .app-download {
+                flex-direction: column;
+                align-items: center;
+            }
+            .order-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">WazirX</div>
+                <div class="nav-item">EXCHANGE</div>
+                <div class="header-actions">
+                    <button class="btn-blue">? HELP</button>
+                    <button class="btn-secondary">LOG IN</button>
+                    <button class="btn-primary">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">
+                        <span>✓</span>
+                        F.I.U. Registered
+                    </div>
+                    <h1>India की Bitcoin<br>Exchange</h1>
+                    <p class="subtitle">Trusted By 15 million+ Indians</p>
+                    <div class="app-badges">
+                        <div class="app-badge">
+                            <img src="https://via.placeholder.com/20?text=G" alt="Google">
+                            GET IT ON<br>Google Play
+                        </div>
+                        <div class="app-badge">
+                            <img src="https://via.placeholder.com/20?text=A" alt="Apple">
+                            Download on the<br>App Store
+                        </div>
+                    </div>
+                    <button class="btn-primary">SIGN UP</button>
+                </div>
+                <div class="hero-phone">
+                    <img class="phone-mockup" src="https://media.wazirx.com/web_assets/landing_page_hero_app_screen/dark/3x.webp" alt="WazirX App">
+                    <!-- <div class="rank-badge">Highest Trader Rank</div> -->
+                    <div class="phone-overlay">
+                        <div class="phone-header">
+                            <!-- <span>WazirX</span>
+                            <div class="phone-nav">
+                                <span>Spot</span>
+                                <span>INR</span> -->
+                            <!-- </div>
+                        </div>
+                        <div class="crypto-list">
+                            <div class="crypto-item">BTC</div>
+                            <div class="crypto-item">ETH</div>
+                        </div>
+                        <div class="price-card">
+                            <strong>BTC ₹35,99,500</strong>
+                            <span class="change positive">+3.78%</span>
+                        </div>
+                        <div class="price-card">
+                            <strong>ETH ₹2,13,500</strong>
+                            <span class="change negative">-2.45%</span>
+                        </div>
+                        <div class="new-listings">* New Listings 3 Markets launched in last 7 days</div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prices Section -->
+    <section class="prices-section">
+        <div class="container">
+            <h2 class="prices-title">300+ cryptos to invest in for your next big move</h2>
+            <div class="prices-grid">
+                <div class="crypto-cards">
+                    <div class="crypto-card">
+                        <div class="crypto-icon">₿</div>
+                        <div class="crypto-details">
+                            <h3>BTC Bitcoin</h3>
+                            <div class="price">₹35,599</div>
+                            <span class="change positive">+3.78%</span>
+                        </div>
+                    </div>
+                    <div class="crypto-card">
+                        <div class="crypto-icon">Ξ</div>
+                        <div class="crypto-details">
+                            <h3>ETH Ethereum</h3>
+                            <div class="price">₹2,13,500</div>
+                            <span class="change negative">-2.45%</span>
+                        </div>
+                    </div>
+                    <div class="crypto-card">
+                        <div class="crypto-icon">Ð</div>
+                        <div class="crypto-details">
+                            <h3>DOGE Dogecoin</h3>
+                            <div class="price">₹11</div>
+                            <span class="change negative">-5.44%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-book">
+                    <div class="order-header">
+                        <span>BTC/INR</span>
+                        <span>Trade</span>
+                        <span>0.345%</span>
+                    </div>
+                    <div class="order-row sell">
+                        <span>23.50,200</span>
+                        <span>0.345</span>
+                        <span>23,5000</span>
+                        <span>0.2516</span>
+                    </div>
+                    <div class="order-row sell">
+                        <span>23.49,700</span>
+                        <span>0.347</span>
+                        <span>23,4999</span>
+                        <span>0.2974</span>
+                    </div>
+                    <div class="order-row buy">
+                        <span>23.48,000</span>
+                        <span>0.349</span>
+                        <span>23,4800</span>
+                        <span>0.3502</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px; color: #a0a0a0; font-size: 14px;">
+                DOGECOIN ₹15,001 <span class="positive">+4.7%</span> | INCH ₹1,749 <span class="positive">+40.9%</span> | CHROMA ₹6,100 <span>0%</span> | FLOKI ₹0.0059 <span class="positive">+5.54%</span> | BNB ₹85,050 <span class="positive">+3.61%</span> | CHAINLINK
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="features-title">Features You Will Love</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon kyc-icon">✓</div>
+                    <div class="feature-text">
+                        <h3>KYC - Swift & Compliant</h3>
+                        <p>Experience seamless onboarding with swift KYC processes, ensuring full compliance with regulations.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon support-icon">?</div>
+                    <div class="feature-text">
+                        <h3>24/7 Support</h3>
+                        <p>Like trusted friend, our 24/7 expert support is always there, making your investment journey in the world of cryptos a breeze.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon api-icon">⚡</div>
+                    <div class="feature-text">
+                        <h3>Seamless API Trading</h3>
+                        <p>Amplify your trading experience with WazirX through seamless API integration.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="features-phone">
+                <img src="https://via.placeholder.com/300x600?text=Features+App" alt="Features App Mockup">
+            </div>
+            <p class="features-desc">Stay informed, stay engaged – an all-inclusive dashboard, keeping you always in action. Simplify your crypto trading journey with QuickBuy—the fastest way to buy and sell your favorites.</p>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security-section">
+        <div class="container">
+            <h2 class="security-title">Your Security Matters</h2>
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon safe-icon">🔒</div>
+                    <h3>Safekeeping of Digital Assets</h3>
+                    <p>We keep all digital assets safe with an extra layer of security.</p>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon auth-icon">**</div>
+                    <h3>2 - Factor Authentication</h3>
+                    <p>Double your WazirX account security with 2-factor authentication – choose the setup that suits you best.</p>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon encrypt-icon">🔐</div>
+                    <h3>End-to-End Encryption</h3>
+                    <p>We use advanced encryption and follow the highest industry standards, ensuring worry-free crypto trading and investment for you.</p>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon trans-icon">📊</div>
+                    <h3>Transparency - Your Right to Know</h3>
+                    <p>We don’t just talk, we practice it. Explore our transparency reports, proof of reserves, and more, because informed users make better decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="quick-start-section">
+        <div class="container">
+            <div class="media-logos">
+                <img class="media-logo" src="https://via.placeholder.com/100x30?text=Forbes" alt="Forbes">
+                <img class="media-logo" src="https://via.placeholder.com/50x30?text=DH" alt="DH">
+                <img class="media-logo" src="https://via.placeholder.com/100x30?text=Business+Standard" alt="Business Standard">
+                <img class="media-logo" src="https://via.placeholder.com/80x30?text=Dailyhunt" alt="Dailyhunt">
+                <img class="media-logo" src="https://via.placeholder.com/120x30?text=BW+Businessworld" alt="BW Businessworld">
+                <img class="media-logo" src="https://via.placeholder.com/80x30?text=Telegraph" alt="Telegraph">
+                <img class="media-logo" src="https://via.placeholder.com/80x30?text=ET" alt="ET">
+            </div>
+            <h2 class="quick-title">Your Quick Start Guide</h2>
+            <div class="quick-grid">
+                <div class="quick-step">
+                    <div class="step-number">1</div>
+                    <h3>Sign up on WazirX</h3>
+                    <p>Begin your WazirX journey with quick signup and smooth KYC verification process.</p>
+                </div>
+                <div class="quick-step">
+                    <div class="step-number">2</div>
+                    <h3>Transfer INR to Wallet</h3>
+                    <p>Deposit INR to your WazirX Account with ease through our secure payment gateways.</p>
+                </div>
+                <div class="quick-step">
+                    <div class="step-number">3</div>
+                    <h3>Buy and Sell Crypto</h3>
+                    <p>Buy, sell, and trade crypto effortlessly, and track seamlessly—all in one place.</p>
+                </div>
+            </div>
+            <div class="app-download">
+                <div class="app-badge">
+                    <img src="https://via.placeholder.com/20?text=G" alt="Google">
+                    GET IT ON<br>Google Play
+                </div>
+                <div class="app-badge">
+                    <img src="https://via.placeholder.com/20?text=A" alt="Apple">
+                    Download on the<br>App Store
+                </div>
+            </div>
+            <button class="btn-primary">SIGN UP</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">Announcements</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Media Assets</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">AML & CFT Policy</a></li>
+                        <li><a href="#">KYC & PMLA Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Download</a></li>
+                        <li><a href="#">Corporate Account</a></li>
+                        <li><a href="#">Referral Program</a></li>
+                        <li><a href="#">WazirX API</a></li>
+                        <li><a href="#">List Your Coin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Crypto Guide</a></li>
+                        <li><a href="#">Crypto Glossary</a></li>
+                        <li><a href="#">What is Bitcoin?</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Fees</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Law Enforcement Request</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Buy Crypto</h4>
+                    <ul>
+                        <li><a href="#">Buy Bitcoin</a></li>
+                        <li><a href="#">Buy Ethereum</a></li>
+                        <li><a href="#">Buy Solana</a></li>
+                        <li><a href="#">Buy Polygon</a></li>
+                        <li><a href="#">Buy Tether</a></li>
+                        <li><a href="#">Buy Dogecoin</a></li>
+                        <li><a href="#">Buy Shiba Inu</a></li>
+                        <li><a href="#">Buy Cardano</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-badges">
+                <div class="fiu-badge">
+                    <span>✓</span>
+                    F.I.U. Registered
+                </div>
+                <div class="crypto-count">300+ Crypto Assets</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
